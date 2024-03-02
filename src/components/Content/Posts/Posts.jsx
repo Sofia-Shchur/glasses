@@ -7,8 +7,8 @@ const Posts = () => {
         <div>
             Posts
             <div className={style.posts}>
-                <NewPost message="New gallery"/>
-                <NewPost message="It is my new post"/>
+                <NewPost message="New gallery" likes="30"/>
+                <NewPost message="It is my new post" likes="10"/>
             </div>
         </div>
     )
