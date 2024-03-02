@@ -1,20 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import Content from "./components/Content/Content";
 import Gallery from "./components/Photos/Gallery/Gallery";
+import Contacts from "./components/Contacts/Contacts";
+import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 function App() {
     return (
-        <div className="app-wrapper">
-            <Header/>
-            <Navbar/>
-            <div className="app-wrapper-content">
-                {/*<Content/>*/}
-                <Gallery/>
+        <BrowserRouter>
+            <div className="app-wrapper">
+                <Header/>
+                <Navbar/>
+                <div className="app-wrapper-content">
+                    <Routes>
+                        <Route path="/content" element={<Content/>}/>
+                        <Route path="/gallery" element={<Gallery/>}/>
+                        <Route path="/contacts" element={<Contacts/>}/>
+                    </Routes>
+                </div>
             </div>
-        </div>
+        </BrowserRouter>
     );
 }
 

@@ -1,13 +1,19 @@
 import React from "react";
-//import './Navbar.module.css'
 import style from './Navbar.module.css'
-import Gallery from "../Photos/Gallery/Gallery";
 
 const Navbar = () => {
     return (
-        //<div>
-            <nav className={style.nav}>Navigation</nav>
-        //</div>
+        <nav className={style.nav}>Navigation
+            <div>
+                <a href="/content" className={style.nav}>Content</a>
+            </div>
+            <div>
+                <a href="/gallery" className={style.nav}>Gallery</a>
+            </div>
+            <div>
+                <a href="/contacts" className={style.nav}>Contacts</a>
+            </div>
+        </nav>
     )
 }
 
