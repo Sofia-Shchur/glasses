@@ -1,7 +1,7 @@
 import React from "react";
-import style from "./Photo.module.css"
+import style from "./PhotoJewelry.module.css"
 
-const Photo = (props) => {
+const PhotoJewelry = (props) => {
     return (
         <div>
             <div>{props.img}</div>
@@ -9,4 +9,4 @@ const Photo = (props) => {
     )
 }
 
-export default Photo
+export default PhotoJewelry

@@ -1,0 +1,13 @@
+.allGallery {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+
+}
+
+.gGallery {
+    padding: 10px;
+}
+
+.jGallery {
+    padding: 10px;
+}
