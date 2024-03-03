@@ -4,7 +4,7 @@ import NewPost from "./NewPost/NewPost";
 
 const Posts = () => {
     return (
-        <div>
+        <div className={style.allPosts}>
             Posts
             <div className={style.posts}>
                 <NewPost message="New gallery" likes="30"/>
