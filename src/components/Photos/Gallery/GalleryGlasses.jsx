@@ -1,12 +1,14 @@
 import React from "react";
 import style from "./GalleryGlasses.module.css"
 import PhotoGlasses from "./PhotoGlasses/PhotoGlasses";
-const GalleryGlasses = () => {
+import {NavLink} from "react-router-dom";
+
+const GalleryGlasses = (props) => {
     return (
         <div>
-            Some photos
+            {props.img}
             <div>
-                <PhotoGlasses img="glasses"/>
+                <NavLink to="/gallery/glasses"><PhotoGlasses/>Open all</NavLink>
             </div>
         </div>
     )

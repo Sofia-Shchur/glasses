@@ -16,7 +16,7 @@ function App() {
                 <div className="app-wrapper-content">
                     <Routes>
                         <Route path="/" element={<Content/>}/>
-                        <Route path="/gallery" element={<AllGallery/>}/>
+                        <Route path="/gallery/*" element={<AllGallery/>}/>
                         <Route path="/friends" element={<Friends/>}/>
                         <Route path="/contacts" element={<Contacts/>}/>
                     </Routes>

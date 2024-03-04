@@ -3,9 +3,12 @@
     background-color: #b6fae3;
 }
 
+.allItem {
+    margin: 10px;
+}
+
 .item {
     color: #7e7e7e;
-    margin: 25px;
     text-decoration:none;
     cursor: pointer;
 }

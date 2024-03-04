@@ -3,11 +3,11 @@ import style from "./AllGallery.module.css"
 import GalleryGlasses from "./GalleryGlasses";
 import GalleryJewelry from "./GalleryJewelry";
 
-const AllGallery = () => {
+const AllGallery = (props) => {
     return (
         <div className={style.allGallery}>
             <div className={style.gGallery}>
-                <GalleryGlasses/>
+                <GalleryGlasses img="this is image glasses"/>
             </div>
             <div className={style.jGallery}>
                 <GalleryJewelry/>
