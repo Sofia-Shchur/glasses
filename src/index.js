@@ -3,20 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import NewPost from "./components/Content/Posts/NewPost/NewPost";
-
+import state from './components/redux/state'
 
 let postsArray = [
     {id: 1, message: "New gallery", likes: "30"},
     {id: 2, message: "It is my new post", likes: "12"}
 ];
 
-let postsElements = postsArray.map(el => <NewPost message={el.message} likes={el.likes}/>)
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App posts={postsElements}/>
+    <App posts={postsArray}/>
   </React.StrictMode>
 );
 
