@@ -3,6 +3,7 @@ import style from './Content.module.css'
 import Posts from "./Posts/Posts";
 
 const Content = (props) => {
+
     return (
         <div className={style.content}>
             <div>

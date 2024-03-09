@@ -8,6 +8,7 @@ import Friends from "./components/Friends/Friends";
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 function App(props) {
+    const state = props.state.postsArray;
     return (
         <BrowserRouter>
             <div className="app-wrapper">
@@ -15,7 +16,7 @@ function App(props) {
                 <Navbar/>
                 <div className="app-wrapper-content">
                     <Routes>
-                        <Route path="/" element={<Content posts={props.posts}/>}/>
+                        <Route path="/" element={<Content posts={state}/>}/>
                         <Route path="/gallery/*" element={<AllGallery/>}/>
                         <Route path="/friends" element={<Friends/>}/>
                         <Route path="/contacts" element={<Contacts/>}/>

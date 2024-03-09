@@ -1,4 +1,3 @@
-
 let state = {
     postsArray: [
         {id: 1, message: "New gallery", likes: "30"},

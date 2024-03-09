@@ -5,15 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import state from './components/redux/state'
 
-let postsArray = [
-    {id: 1, message: "New gallery", likes: "30"},
-    {id: 2, message: "It is my new post", likes: "12"}
-];
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App posts={postsArray}/>
+    <App state={state}/>
   </React.StrictMode>
 );
 
