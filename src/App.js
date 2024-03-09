@@ -8,7 +8,7 @@ import Friends from "./components/Friends/Friends";
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 function App(props) {
-    const state = props.state.postsArray;
+    const state = props.state.contentPage.postsArray;
     return (
         <BrowserRouter>
             <div className="app-wrapper">
