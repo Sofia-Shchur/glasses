@@ -9,7 +9,7 @@ const Content = (props) => {
             <div>
                 <img src="https://koketta.ru/wp-content/uploads/f/7/5/f759fc6ebf74e681a27d91c8736bb4d6.jpeg"/>
             </div>
-            <Posts posts={props.posts}/>
+            <Posts posts={props.posts} addPost={props.addPost}/>
         </div>
     )
 }

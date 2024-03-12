@@ -16,7 +16,7 @@ function App(props) {
                 <Navbar/>
                 <div className="app-wrapper-content">
                     <Routes>
-                        <Route path="/" element={<Content posts={state}/>}/>
+                        <Route path="/" element={<Content posts={state} addPost={props.addPost}/>}/>
                         <Route path="/gallery/*" element={<AllGallery/>}/>
                         <Route path="/friends" element={<Friends/>}/>
                         <Route path="/contacts" element={<Contacts/>}/>
