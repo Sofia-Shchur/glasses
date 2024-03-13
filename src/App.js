@@ -9,6 +9,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 function App(props) {
     const state = props.state.contentPage.postsArray;
+    const text = props.state.contentPage.newPostText;
     return (
         <BrowserRouter>
             <div className="app-wrapper">
@@ -16,7 +17,7 @@ function App(props) {
                 <Navbar/>
                 <div className="app-wrapper-content">
                     <Routes>
-                        <Route path="/" element={<Content posts={state} addPost={props.addPost}/>}/>
+                        <Route path="/" element={<Content posts={state} addPost={props.addPost} newPostText={text} updateNewPostText={props.updateNewPostText}/>}/>
                         <Route path="/gallery/*" element={<AllGallery/>}/>
                         <Route path="/friends" element={<Friends/>}/>
                         <Route path="/contacts" element={<Contacts/>}/>
