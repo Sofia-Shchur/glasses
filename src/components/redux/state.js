@@ -10,14 +10,14 @@ let state = {
     }
 }
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
     let newPost = {
         id: 3,
-        message: postMessage,
+        message: state.contentPage.newPostText,
         likes: 0,
     }
-
     state.contentPage.postsArray.push(newPost);
+    state.contentPage.newPostText = '';
     rerenderEntireTree(state);
 }
 
