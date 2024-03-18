@@ -6,6 +6,7 @@ import AllGallery from "./components/Photos/Gallery/AllGallery";
 import Contacts from "./components/Contacts/Contacts";
 import Friends from "./components/Friends/Friends";
 import {BrowserRouter, Routes, Route} from "react-router-dom"
+import {store} from "./components/redux/state";
 
 function App(props) {
     const state = props.state.contentPage.postsArray;
@@ -17,7 +18,7 @@ function App(props) {
                 <Navbar/>
                 <div className="app-wrapper-content">
                     <Routes>
-                        <Route path="/" element={<Content posts={state} addPost={props.addPost} newPostText={text} updateNewPostText={props.updateNewPostText}/>}/>
+                        <Route path="/" element={<Content posts={state} store={store} addPost={props.store.addPost} newPostText={text} updateNewPostText={props.store.updateNewPostText}/>}/>
                         <Route path="/gallery/*" element={<AllGallery/>}/>
                         <Route path="/friends" element={<Friends/>}/>
                         <Route path="/contacts" element={<Contacts/>}/>

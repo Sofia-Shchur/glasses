@@ -7,19 +7,19 @@ const Posts = (props) => {
     let newPost = React.createRef();
 
     let addPost = () => {
-        props.addPost();
+        props.store.addPost();
     }
 
     let onPostChange = () => {
         let text = newPost.current.value;
-        props.updateNewPostText(text);
+        props.store.updateNewPostText(text);
     }
 
     return (
         <div className={style.allPosts}>
             Posts
             <div>
-                <textarea onChange={onPostChange} ref={newPost} value={props.newPostText}/>
+                <textarea onChange={onPostChange} ref={newPost} value={props.store.newPostText}/>
             </div>
             <div>
                 <button onClick={addPost}>New post</button>
