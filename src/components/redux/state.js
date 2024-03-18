@@ -1,9 +1,5 @@
-let rerenderEntireTree = () => {
-    console.log("start")
-}
-
 export let store = {
-    state: {
+    _state: {
         contentPage: {
             postsArray: [
                 {id: 1, message: "New gallery", likes: 30},
@@ -12,22 +8,28 @@ export let store = {
             newPostText: "lalala"
         }
     },
+    getState() {
+        return this._state;
+    },
+    _callSubscriber()  {
+        console.log("start")
+    },
     subscribe(observer) {
-        rerenderEntireTree = observer;
+        this._callSubscriber = observer;
     },
     addPost() {
         let newPost = {
             id: 3,
-            message: this.state.contentPage.newPostText,
+            message: this._state.contentPage.newPostText,
             likes: 0,
         }
-        this.state.contentPage.postsArray.push(newPost);
-        this.state.contentPage.newPostText = '';
-        rerenderEntireTree(this.state);
+        this._state.contentPage.postsArray.push(newPost);
+        this._state.contentPage.newPostText = '';
+        this._callSubscriber(this._state);
     },
     updateNewPostText(newText) {
-        this.state.contentPage.newPostText = newText;
-        rerenderEntireTree(this.state);
+        this._state.contentPage.newPostText = newText;
+        this._callSubscriber(this._state);
     }
 }
 
