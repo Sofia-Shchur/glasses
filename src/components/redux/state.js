@@ -1,5 +1,3 @@
-import {observe} from "web-vitals/dist/modules/lib/observe";
-
 let rerenderEntireTree = () => {
     console.log("start")
 }
@@ -22,12 +20,12 @@ export let addPost = () => {
     }
     state.contentPage.postsArray.push(newPost);
     state.contentPage.newPostText = '';
-    rerenderEntireTree();
+    rerenderEntireTree(state);
 }
 
 export let updateNewPostText = (newText) => {
     state.contentPage.newPostText = newText;
-    rerenderEntireTree();
+    rerenderEntireTree(state);
 }
 
 export let subscribe = (observer) => {
