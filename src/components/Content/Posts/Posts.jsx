@@ -1,8 +1,8 @@
 import React from "react";
 import style from "./Posts.module.css";
 import NewPost from "./NewPost/NewPost";
-import {addPostActionCreator} from "../../redux/state";
-import {updateNewTextActionCreator} from "../../redux/state";
+import {addPostActionCreator} from "../../redux/contentReducer";
+import {updateNewTextActionCreator} from "../../redux/contentReducer";
 
 const Posts = (props) => {
     let postsElements = props.posts.map(el => <NewPost message={el.message} likes={el.likes}/>)

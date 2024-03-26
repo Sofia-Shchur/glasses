@@ -1,5 +1,5 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
+import {contentReducer} from "./contentReducer";
+import {sidebarReducer} from "./sidebarReducer";
 
 export let store = {
     _state: {
@@ -9,6 +9,9 @@ export let store = {
                 {id: 2, message: "It is my new post", likes: 12}
             ],
             newPostText: "lalala"
+        },
+        sidebar: {
+
         }
     },
     getState() {
@@ -21,33 +24,10 @@ export let store = {
         this._callSubscriber = observer;
     },
     dispatch(action) {
-        if (action.type === ADD_POST) {
-            let newPost = {
-                id: 3,
-                message: this._state.contentPage.newPostText,
-                likes: 0,
-            }
-            this._state.contentPage.postsArray.push(newPost);
-            this._state.contentPage.newPostText = '';
-            this._callSubscriber(this._state);
-
-        } else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._state.contentPage.newPostText = action.newText;
-            this._callSubscriber(this._state);
-        }
+        this._state.contentPage = contentReducer(this._state.contentPage, action)
+        this._state.sidebar = sidebarReducer(this._state.sidebar, action)
+        this._callSubscriber(this._state)
     }
 }
 
-
-export const addPostActionCreator = () => {
-    return {
-        type: ADD_POST
-    }
-}
-
-export const updateNewTextActionCreator = (text) => {
-    return {
-        type: UPDATE_NEW_POST_TEXT, newText: text
-    }
-}
 
