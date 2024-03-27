@@ -6,7 +6,7 @@ import AllGallery from "./components/Photos/Gallery/AllGallery";
 import Contacts from "./components/Contacts/Contacts";
 import Friends from "./components/Friends/Friends";
 import {BrowserRouter, Routes, Route} from "react-router-dom"
-import {store} from "./components/redux/state";
+import {store} from "./components/redux/store";
 
 function App(props) {
     const state = props.state.contentPage.postsArray;

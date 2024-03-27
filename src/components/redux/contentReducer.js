@@ -1,7 +1,15 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
 
-export const contentReducer = (state, action) => {
+let initialState = {
+    postsArray: [
+        {id: 1, message: "New gallery", likes: 30},
+        {id: 2, message: "It is my new post", likes: 12}
+    ],
+    newPostText: "lalala"
+}
+
+export const contentReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST:
             let newPost = {
@@ -19,7 +27,6 @@ export const contentReducer = (state, action) => {
             return state;
     }
 }
-
 
 
 export const addPostActionCreator = () => {
